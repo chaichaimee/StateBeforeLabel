@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>StateBeforeLabel NVDA-Add-on</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 30px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+.tap-explanation {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feature-item {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" class="nvda-logo">
+    <h1>StateBeforeLabel</h1>
+
+<br>
+
+<p style="text-align: center;">Status zuerst. Überspringe, was nicht zählt.</p>
+</div>
+
+<br>
+
+<div class="section">
+    <p style="text-align: center;"><b>Autor:</b> chai chaimee</p>
+    <p style="text-align: center;"><b>URL:</b> https://github.com/chaichaimee/StateBeforeLabel</p>
+</div>
+
+<hr>
+
+<div class="section">
+           <br>    
+
+<h2>Beschreibung</h2>
+    <p>
+        Ist es dir schon einmal passiert, dass du durch ein langes Formular getabbt bist, auf die vollständige Bezeichnung eines Steuerelements gewartet hast, um ganz am Ende festzustellen, dass es deaktiviert oder bereits aktiviert war? Diese Sekundenbruchteile summieren sich und zwingen dein Gehirn, jedes Steuerelement nach dem Hören seiner Bezeichnung neu zu bewerten – anstatt davor.
+    </p>
+    <p>
+        State Before Label kehrt die Ansage-Reihenfolge um. Es spricht zuerst die wichtigsten Zustandsinformationen, dann den Namen, sodass du sofort entscheiden kannst, ob du anhalten und interagieren oder weitermachen möchtest. Nicht länger auf eine lange Button-Bezeichnung warten, nur um am Ende ein angehängtes "Nicht verfügbar" zu hören.
+    </p>
+    <p>
+        Jede Zustandskategorie hat ihren eigenen Ein-/Ausschalter in den NVDA-Einstellungen, sodass du genau kontrollieren kannst, welche Zustände priorisiert behandelt werden.
+    </p>
+    <br>
+    <h2>Funktionen</h2>
+
+    <h3>Kontrollkästchen, Optionsfelder und Menüpunkte mit Checkbox</h3>
+    <p>
+        <strong>Problem:</strong> Wenn die Bezeichnung eines Kontrollkästchens lang oder ausführlich ist, sagt NVDA traditionell zuerst den Namen und dann den Aktivierungszustand an. Wenn du "aktiviert" hörst, hast du bereits Aufmerksamkeit investiert, um zu verstehen, um welches Steuerelement es sich handelt.
+    </p>
+    <p><strong>Vorher:</strong> "Ich stimme den Allgemeinen Geschäftsbedingungen und der Datenschutzrichtlinie dieser Website zu, einschließlich aller Unterabschnitte zur Datenerfassung. Aktiviert"</p>
+    <p><strong>Nachher:</strong> "Aktiviert. Ich stimme den Allgemeinen Geschäftsbedingungen und der Datenschutzrichtlinie dieser Website zu, einschließlich aller Unterabschnitte zur Datenerfassung."</p>
+    <p>
+        Wenn das Kontrollkästchen nicht aktiviert ist, spricht das Add-on den negativen Zustand: "Nicht aktiviert" vor der Bezeichnung. Die standardmäßige Rollenansage von NVDA wie "Kontrollkästchen" wird automatisch unterdrückt, sodass der Zustand klar und ohne Redundanz hervorgehoben wird.
+    </p>
+    <p>
+        <strong>Praxisbeispiel – NVDA-Spracheinstellungen:</strong> Dies ist ein Bereich, den du wahrscheinlich häufig besuchst. So sehen die Kontrollkästchen mit aktiviertem State Before Label aus:
+    </p>
+    <p><strong>Vorher:</strong></p>
+    <ul>
+        <li>Geschwindigkeitsverstärkung. Kontrollkästchen. Nicht aktiviert. Alt+t</li>
+        <li>Modernes Audioausgabesystem verwenden (WASAPI). Kontrollkästchen. Aktiviert</li>
+        <li>Automatische Sprachumschaltung (wenn unterstützt). Kontrollkästchen. Nicht aktiviert</li>
+        <li>Automatische Dialektumschaltung (wenn unterstützt). Kontrollkästchen. Nicht aktiviert</li>
+        <li>Sprachänderungen beim Lesen melden. Kontrollkästchen. Nicht aktiviert. Alt+g</li>
+        <li>Sprache der Stimme bei der Verarbeitung von Zeichen und Symbolen vertrauen. Kontrollkästchen. Aktiviert</li>
+        <li>Daten des Unicode-Konsortiums (einschließlich Emoji). Kontrollkästchen. Aktiviert</li>
+        <li>Verzögerte Beschreibungen für Zeichen bei Cursorbewegung. Kontrollkästchen. Nicht aktiviert. Alt+d</li>
+        <li>"Cap" vor Großbuchstaben sagen. Kontrollkästchen. Nicht aktiviert. Alt+c</li>
+        <li>Signalton für Großbuchstaben. Kontrollkästchen. Nicht aktiviert. Alt+b</li>
+        <li>Rechtschreibfunktion verwenden, falls unterstützt. Kontrollkästchen. Nicht aktiviert. Alt+s</li>
+    </ul>
+    <p><strong>Nachher – mit State Before Label:</strong></p>
+    <ul>
+        <li>Nicht aktiviert. Geschwindigkeitsverstärkung. Alt+t</li>
+        <li>Aktiviert. Modernes Audioausgabesystem verwenden (WASAPI)</li>
+        <li>Nicht aktiviert. Automatische Sprachumschaltung (wenn unterstützt)</li>
+        <li>Nicht aktiviert. Automatische Dialektumschaltung (wenn unterstützt)</li>
+        <li>Nicht aktiviert. Sprachänderungen beim Lesen melden. Alt+g</li>
+        <li>Aktiviert. Sprache der Stimme bei der Verarbeitung von Zeichen und Symbolen vertrauen</li>
+        <li>Aktiviert. Daten des Unicode-Konsortiums (einschließlich Emoji)</li>
+        <li>Nicht aktiviert. Verzögerte Beschreibungen für Zeichen bei Cursorbewegung. Alt+d</li>
+        <li>Nicht aktiviert. "Cap" vor Großbuchstaben sagen. Alt+c</li>
+        <li>Nicht aktiviert. Signalton für Großbuchstaben. Alt+b</li>
+        <li>Nicht aktiviert. Rechtschreibfunktion verwenden, falls unterstützt. Alt+s</li>
+    </ul>
+    <p>
+        Beachte, dass das Wort "Kontrollkästchen" in jeder Zeile verschwunden ist. Du hörst nur den Zustand, gefolgt von der Bezeichnung und der Tastenkombination. Dies verwandelt eine unübersichtliche Einstellungsseite in eine saubere, sofort überprüfbare Liste, in der dein Gehirn zuerst den Ein-/Aus-Status und dann den Funktionsnamen verarbeitet. Das Durchtabben von 11 Kontrollkästchen wird erheblich schneller, wenn jedes einzelne dem gleichen klaren Muster folgt.
+    </p>
+    <br>
+
+    <h3>Umschaltflächen (Toggle Buttons)</h3>
+    <p>
+        <strong>Problem:</strong> Umschaltflächen wie Fett, Kursiv oder Stummschalten zeigen ihren Zustand visuell durch Hervorhebung an, aber Screenreader-Nutzer müssen zuerst die Bezeichnung hören, bevor sie erfahren, ob die Funktion ein- oder ausgeschaltet ist.
+    </p>
+    <p><strong>Vorher:</strong> "Fett. Umschaltfläche. Gedrückt"</p>
+    <p><strong>Nachher:</strong> "Gedrückt. Fett"</p>
+    <p>
+        Wenn die Umschaltfläche aus ist, wird "Nicht gedrückt" vor dem Button-Namen gesprochen. Die Rollenansage wird ebenfalls gestrafft, sodass der Fokus auf Zustand und dann Identität bleibt.
+    </p>
+    <p>
+        <strong>Praxisbeispiel – Windows-Einstellungen &gt; Konten &gt; Anmeldeoptionen:</strong> Diese Seite enthält mehrere Umschaltflächen, die steuern, wie sich Windows beim Neustart oder bei erneuter Anmeldung verhält. So liest sich eine davon:
+    </p>
+    <p><strong>Vorher:</strong> "Meine neu startbaren Apps automatisch speichern und beim erneuten Anmelden neu starten. Umschaltfläche. Nicht gedrückt"</p>
+    <p><strong>Nachher:</strong> "Nicht gedrückt. Meine neu startbaren Apps automatisch speichern und beim erneuten Anmelden neu starten"</p>
+    <p>
+        Die Bezeichnung ist lang, aber mit State Before Label hörst du zuerst den Status. Wenn die Umschaltfläche bereits aktiviert ist, hörst du "Gedrückt" und fährst fort. Wenn sie deaktiviert ist und du sie aktivieren möchtest, weißt du das sofort und drückst die Leertaste. Kein Warten auf einen langen Satz, bis du zur Entscheidung kommst.
+    </p>
+    <br>
+
+    <h3>Baumansicht-Elemente (Erweitert/Reduziert)</h3>
+    <p>
+        <strong>Problem:</strong> Die Navigation in einer Baumstruktur in Datei-Explorern oder Einstellungsbereichen erfordert, dass du weißt, ob ein Zweig geöffnet oder geschlossen ist. Wenn du zuerst den Ordnernamen hörst, musst du dir merken, wo du dich befindest, und dann den Erweiterungszustand verarbeiten.
+    </p>
+    <p><strong>Vorher:</strong> "Dokumente. Erweitert. Ebene 2"</p>
+    <p><strong>Nachher:</strong> "Erweitert. Dokumente"</p>
+    <p>
+        Reduzierte Zweige kündigen zuerst "Reduziert" an und geben dir sofort den Hinweis, die rechte Pfeiltaste zu drücken, wenn du tiefer erkunden möchtest, ohne auf den vollständigen Namen warten zu müssen.
+    </p>
+    <br>
+
+    <h3>Buttons mit erweitertem/reduziertem Zustand</h3>
+    <p>
+        <strong>Problem:</strong> Moderne Websites und Apps verwenden oft Standard-Buttons als Dropdown-Auslöser oder Accordion-Kopfzeilen mit <code>aria-expanded</code>. Diese Buttons sehen für NVDA wie normale Buttons aus, aber ihr Erweiterungszustand ist entscheidend, um zu verstehen, ob ein Menü oder ein Inhaltsbereich gerade geöffnet ist.
+    </p>
+    <p><strong>Vorher:</strong> "Einstellungen. Button" (kein Hinweis, dass das Dropdown geöffnet ist)</p>
+    <p><strong>Nachher:</strong> "Erweitert. Einstellungen"</p>
+    <p>
+        Diese Funktion ist in den Einstellungen optional. Wenn aktiviert, wird bei jeder Button-Rolle, die den Zustand "Erweitert" oder "Reduziert" trägt, der Zustand zuerst angesagt, was dir das gleiche baumansichtsähnliche Bewusstsein für Menüs, FAQ-Akkordeons und erweiterbare Abschnitte gibt.
+    </p>
+    <br>
+
+    <h3>Ausgewählter Zustand für Registerkarten und Listenelemente</h3>
+    <p>
+        <strong>Problem:</strong> Wenn du durch Registerkarten in einem Dialog navigierst oder eine lange Liste von Dateien durchgehst, erfordert das Wissen, welches Element gerade ausgewählt ist, dass du zuerst den Namen und dann "Ausgewählt" hörst. In einer Liste mit Dutzenden von Elementen erhöht das die kognitive Belastung.
+    </p>
+    <p><strong>Vorher:</strong> "Allgemein. Registerkarte. Ausgewählt"</p>
+    <p><strong>Nachher:</strong> "Ausgewählt. Allgemein"</p>
+    <p>
+        Diese Einstellung ist standardmäßig deaktiviert, um die Erfahrung minimal zu halten. Aktiviere sie, wenn du häufig mit Registerkarten-Schnittstellen oder langen auswählbaren Listen arbeitest, bei denen das Bewusstsein für die aktuelle Auswahl wichtig ist.
+    </p>
+    <br>
+
+    <h3>Nicht verfügbarer Zustand (Global)</h3>
+    <p>
+        <strong>Problem:</strong> Deaktivierte Steuerelemente gibt es überall: ausgegraute Buttons, gesperrte Bearbeitungsfelder, nicht verfügbare Menüpunkte. Das Hören eines langen Namens, nur um festzustellen, dass das Steuerelement nicht nutzbar ist, verschwendet Tastendrücke und geistige Energie.
+    </p>
+    <p><strong>Vorher:</strong> "Absenden. Button. Nicht verfügbar"</p>
+    <p><strong>Nachher:</strong> "Nicht verfügbar. Absenden"</p>
+    <p>
+        Diese Prüfung läuft global für jeden Steuerelementtyp. Jedes Objekt, das den Zustand "Nicht verfügbar" trägt, kündigt ihn zuerst an, sodass du es sofort überspringen kannst. Die Rolle des Steuerelements und andere Zustände werden sauber behandelt, sodass nichts doppelt angesagt wird.
+    </p>
+    <br>
+
+    <h3>Schreibgeschützter Zustand für Bearbeitungsfelder</h3>
+    <p>
+        <strong>Problem:</strong> Du landest in einem Bearbeitungsfeld, bereit zu tippen, und hörst erst ganz am Ende der Ansage "Schreibgeschützt". Das unterbricht den Arbeitsablauf und erzeugt Verwirrung darüber, ob das Feld tatsächlich bearbeitbar ist.
+    </p>
+    <p><strong>Vorher:</strong> "E-Mail-Adresse. Bearbeiten. Schreibgeschützt"</p>
+    <p><strong>Nachher:</strong> "Schreibgeschützt. E-Mail-Adresse"</p>
+    <p>
+        Das Add-on stellt "Schreibgeschützt" vor den Feldnamen, während es das gesamte Standardverhalten von NVDA beibehält: Die Ansage von Textauswahl, Cursorposition und Wertelesen funktionieren alle genau wie erwartet.
+    </p>
+    <br>
+
+    <h2>Verwendung</h2>
+    <ol>
+        <li>Öffne das NVDA-Menü &gt; Einstellungen &gt; Einstellungen &gt; State Before Label.</li>
+        <li>Aktiviere oder deaktiviere jede Zustandskategorie nach deinen Wünschen.</li>
+        <li>Drücke OK. Die Änderungen werden sofort wirksam, ohne dass NVDA neu gestartet werden muss.</li>
+    </ol>
+    <p>
+        Alle Funktionen arbeiten automatisch, wenn du den Fokus mit Tab, Pfeiltasten oder Mausnavigation bewegst. Keine zusätzlichen Tastenkombinationen zum Merken.
+    </p>
+</div>
+
+<br><br>
+<h2>Unterstütze mich</h2>
+    <p>Wenn dieses Tool dein Leben leichter gemacht hat, denke darüber nach, die nächste Aktualisierung mit einer kleinen Spende zu unterstützen.</p>
+
+<br>
+
+<p>
+  <a href="https://buy.stripe.com/dRm9AU1xQ3Ds22N6VK1VK01">
+    <img src="https://img.shields.io/badge/Donate-Support%20Me-blue?style=for-the-badge&logo=stripe" alt="Unterstütze mich">
+  </a>
+</p>
+<br>
+
+<p>Deine Unterstützung bedeutet mir viel. Lass uns gemeinsam etwas Großartiges schaffen.</p>
+
+<br>
+
+  <div class="footer-note">
+<p>&copy; 2026 Chai Chaimee NVDA-Add-on, veröffentlicht unter der GNU General Public License.</p>
+</div>
+</div>
+</body>
+</html>

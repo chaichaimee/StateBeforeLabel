@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StateBeforeLabel 2026.7.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-06-28 16:42+0700\n"
+"PO-Revision-Date: 2026-06-28\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:66
+msgid "Announce &Read-only state for Edit boxes"
+msgstr "Ilmoita muokkauskenttien kirjoitussuojattu tila"
+
+#: __init__.py:56
+msgid "Announce &Selected state for Tabs and List items"
+msgstr "Ilmoita välilehtien ja luetteloiden valittu tila"
+
+#: __init__.py:51
+msgid "Announce &Unavailable state before name (global)"
+msgstr "Ilmoita käytettävissä olematon tila ennen nimeä (yleinen)"
+
+#: __init__.py:36
+msgid "Enable for Checkboxes, Radio buttons, and Check Menu Items"
+msgstr "Ota käyttöön valintaruuduille, valintanapeille ja valittaville valikkokohdille"
+
+#: __init__.py:41
+msgid "Enable for Toggle buttons"
+msgstr "Ota käyttöön vaihtopainikkeille"
+
+#: __init__.py:46
+msgid "Enable for TreeView items (Expanded/Collapsed)"
+msgstr "Ota käyttöön puunäkymän kohteille (laajennettu/tiivistetty)"
+
+#: __init__.py:61
+msgid "Include &Buttons for Expanded/Collapsed detection"
+msgstr "Sisällytä painikkeet laajennettu/tiivistetty -tilan tunnistukseen"
+
+#: __init__.py:30
+msgid "State Before Label"
+msgstr "Tila ennen otsikkoa"

@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StateBeforeLabel 2026.7.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-06-28 16:42+0700\n"
+"PO-Revision-Date: 2026-06-28\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Slovak\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:66
+msgid "Announce &Read-only state for Edit boxes"
+msgstr "Ohlasovať stav „len na čítanie“ pre editačné polia"
+
+#: __init__.py:56
+msgid "Announce &Selected state for Tabs and List items"
+msgstr "Ohlasovať stav „vybraté“ pre karty a položky zoznamu"
+
+#: __init__.py:51
+msgid "Announce &Unavailable state before name (global)"
+msgstr "Ohlasovať stav „nedostupné“ pred názvom (globálne)"
+
+#: __init__.py:36
+msgid "Enable for Checkboxes, Radio buttons, and Check Menu Items"
+msgstr "Povoliť pre zaškrtávacie políčka, prepínacie tlačidlá a zaškrtávacie položky ponúk"
+
+#: __init__.py:41
+msgid "Enable for Toggle buttons"
+msgstr "Povoliť pre prepínacie tlačidlá"
+
+#: __init__.py:46
+msgid "Enable for TreeView items (Expanded/Collapsed)"
+msgstr "Povoliť pre položky stromovej štruktúry (rozbalené/zbalené)"
+
+#: __init__.py:61
+msgid "Include &Buttons for Expanded/Collapsed detection"
+msgstr "Zahrnúť tlačidlá na detekciu rozbalenia/zbalenia"
+
+#: __init__.py:30
+msgid "State Before Label"
+msgstr "Stav pred menovkou"

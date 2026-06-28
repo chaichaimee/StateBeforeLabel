@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StateBeforeLabel 2026.7.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-06-28 16:42+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:66
+msgid "Announce &Read-only state for Edit boxes"
+msgstr "朗读编辑框的“只读”状态"
+
+#: __init__.py:56
+msgid "Announce &Selected state for Tabs and List items"
+msgstr "朗读选项卡和列表项的“选中”状态"
+
+#: __init__.py:51
+msgid "Announce &Unavailable state before name (global)"
+msgstr "在名称前朗读“不可用”状态 (全局)"
+
+#: __init__.py:36
+msgid "Enable for Checkboxes, Radio buttons, and Check Menu Items"
+msgstr "为复选框、单选按钮和可检查的菜单项启用"
+
+#: __init__.py:41
+msgid "Enable for Toggle buttons"
+msgstr "为切换按钮启用"
+
+#: __init__.py:46
+msgid "Enable for TreeView items (Expanded/Collapsed)"
+msgstr "为树状视图项启用 (展开/折叠)"
+
+#: __init__.py:61
+msgid "Include &Buttons for Expanded/Collapsed detection"
+msgstr "包含展开/折叠检测的按钮"
+
+#: __init__.py:30
+msgid "State Before Label"
+msgstr "标签前的状态"

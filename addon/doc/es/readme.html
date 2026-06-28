@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Complemento StateBeforeLabel para NVDA</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 30px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+.tap-explanation {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feature-item {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="Logo de NVDA" class="nvda-logo">
+    <h1>StateBeforeLabel</h1>
+
+<br>
+
+<p style="text-align: center;">Obtén el estado primero. Omite los que no importan.</p>
+</div>
+
+<br>
+
+<div class="section">
+    <p style="text-align: center;"><b>autor:</b> chai chaimee</p>
+    <p style="text-align: center;"><b>URL:</b> https://github.com/chaichaimee/StateBeforeLabel</p>
+</div>
+
+<hr>
+
+<div class="section">
+           <br>    
+
+<h2>Descripción</h2>
+    <p>
+        ¿Alguna vez has navegado con tabulador a través de un formulario largo, esperando escuchar la etiqueta completa de un control, solo para descubrir al final que estaba deshabilitado o ya estaba marcado? Ese breve retraso se acumula, obligando a tu cerebro a reevaluar cada control después de escuchar su etiqueta en lugar de antes.
+    </p>
+    <p>
+        State Before Label invierte el orden de anuncio. Primero habla la información de estado más importante, luego el nombre, para que puedas decidir al instante si detenerte e interactuar o seguir adelante. No más escuchar una etiqueta larga de botón solo para oír "No disponible" al final.
+    </p>
+    <p>
+        Cada categoría de estado tiene su propio interruptor de activación/desactivación en la configuración de NVDA, para que controles exactamente qué estados reciben tratamiento prioritario.
+    </p>
+    <br>
+    <h2>Características</h2>
+
+    <h3>Casillas de verificación, botones de opción y elementos de menú con casilla</h3>
+    <p>
+        <strong>Problema:</strong> Cuando la etiqueta de una casilla de verificación es larga o descriptiva, NVDA tradicionalmente anuncia primero el nombre y luego el estado de marcado. Para cuando escuchas "marcado", ya has invertido atención en comprender qué es el control.
+    </p>
+    <p><strong>Antes:</strong> "Acepto los términos y condiciones y la política de privacidad de este sitio web, incluidas todas las subsecciones relacionadas con la recopilación de datos. Marcado"</p>
+    <p><strong>Después:</strong> "Marcado. Acepto los términos y condiciones y la política de privacidad de este sitio web, incluidas todas las subsecciones relacionadas con la recopilación de datos."</p>
+    <p>
+        Cuando no está marcado, el complemento habla el estado negativo: "No marcado" antes de la etiqueta. El anuncio de rol predeterminado de NVDA, como "casilla de verificación", se suprime naturalmente para que el estado destaque claramente sin redundancia.
+    </p>
+    <p>
+        <strong>Ejemplo del mundo real — Configuración de voz de NVDA:</strong> Este es un panel que probablemente visitas a menudo. Así es como aparecen las casillas de verificación con State Before Label activo:
+    </p>
+    <p><strong>Antes:</strong></p>
+    <ul>
+        <li>Aumento de velocidad. Casilla de verificación. No marcado. Alt+t</li>
+        <li>Usar sistema moderno de salida de audio (WASAPI). Casilla de verificación. Marcado</li>
+        <li>Cambio automático de idioma (cuando sea compatible). Casilla de verificación. No marcado</li>
+        <li>Cambio automático de dialecto (cuando sea compatible). Casilla de verificación. No marcado</li>
+        <li>Informar cambios de idioma al leer. Casilla de verificación. No marcado. Alt+g</li>
+        <li>Confiar en el idioma de la voz al procesar caracteres y símbolos. Casilla de verificación. Marcado</li>
+        <li>Datos del Consorcio Unicode (incluidos emoji). Casilla de verificación. Marcado</li>
+        <li>Descripciones retrasadas para caracteres al mover el cursor. Casilla de verificación. No marcado. Alt+d</li>
+        <li>Decir "Mayús" antes de mayúsculas. Casilla de verificación. No marcado. Alt+c</li>
+        <li>Pitar para mayúsculas. Casilla de verificación. No marcado. Alt+b</li>
+        <li>Usar funcionalidad de ortografía si es compatible. Casilla de verificación. No marcado. Alt+s</li>
+    </ul>
+    <p><strong>Después — con State Before Label:</strong></p>
+    <ul>
+        <li>No marcado. Aumento de velocidad. Alt+t</li>
+        <li>Marcado. Usar sistema moderno de salida de audio (WASAPI)</li>
+        <li>No marcado. Cambio automático de idioma (cuando sea compatible)</li>
+        <li>No marcado. Cambio automático de dialecto (cuando sea compatible)</li>
+        <li>No marcado. Informar cambios de idioma al leer. Alt+g</li>
+        <li>Marcado. Confiar en el idioma de la voz al procesar caracteres y símbolos</li>
+        <li>Marcado. Datos del Consorcio Unicode (incluidos emoji)</li>
+        <li>No marcado. Descripciones retrasadas para caracteres al mover el cursor. Alt+d</li>
+        <li>No marcado. Decir "Mayús" antes de mayúsculas. Alt+c</li>
+        <li>No marcado. Pitar para mayúsculas. Alt+b</li>
+        <li>No marcado. Usar funcionalidad de ortografía si es compatible. Alt+s</li>
+    </ul>
+    <p>
+        Observa cómo la palabra "Casilla de verificación" ha desaparecido de cada línea. Solo escuchas el estado seguido de la etiqueta y el atajo. Esto transforma una página de configuración abarrotada en una lista limpia y escaneable al instante, donde tu cerebro procesa primero el estado de activación/desactivación y luego el nombre de la función. Navegar con tabulador a través de 11 casillas de verificación se vuelve significativamente más rápido cuando cada una sigue el mismo patrón nítido.
+    </p>
+    <br>
+
+    <h3>Botones de alternancia</h3>
+    <p>
+        <strong>Problema:</strong> Los botones de alternancia como Negrita, Cursiva o Silenciar indican visualmente su estado mediante resaltado, pero los usuarios de lectores de pantalla deben escuchar primero la etiqueta antes de saber si la función está activada o desactivada.
+    </p>
+    <p><strong>Antes:</strong> "Negrita. Botón de alternancia. Presionado"</p>
+    <p><strong>Después:</strong> "Presionado. Negrita"</p>
+    <p>
+        Cuando la alternancia está desactivada, se dice "No presionado" antes del nombre del botón. El anuncio de rol se simplifica de manera similar para que el enfoque permanezca en el estado y luego en la identidad.
+    </p>
+    <p>
+        <strong>Ejemplo del mundo real — Configuración de Windows &gt; Cuentas &gt; Opciones de inicio de sesión:</strong> Esta página contiene varios botones de alternancia que controlan cómo se comporta Windows cuando reinicias o inicias sesión nuevamente. Así se lee uno de ellos:
+    </p>
+    <p><strong>Antes:</strong> "Guardar automáticamente mis aplicaciones reiniciables y reiniciarlas cuando vuelva a iniciar sesión. Botón de alternancia. No presionado"</p>
+    <p><strong>Después:</strong> "No presionado. Guardar automáticamente mis aplicaciones reiniciables y reiniciarlas cuando vuelva a iniciar sesión"</p>
+    <p>
+        La etiqueta es larga, pero con State Before Label escuchas el estado primero. Si la alternancia ya está activada, escuchas "Presionado" y sigues adelante. Si está desactivada y quieres activarla, lo sabes de inmediato y presionas la barra espaciadora. Sin esperar a una oración larga para llegar al punto de decisión.
+    </p>
+    <br>
+
+    <h3>Elementos de vista de árbol (Expandido/Colapsado)</h3>
+    <p>
+        <strong>Problema:</strong> Navegar por una estructura de árbol en exploradores de archivos o paneles de configuración requiere saber si una rama está abierta o cerrada. Escuchar primero el nombre de la carpeta te obliga a recordar dónde estás y luego procesar el estado de expansión.
+    </p>
+    <p><strong>Antes:</strong> "Documentos. Expandido. Nivel 2"</p>
+    <p><strong>Después:</strong> "Expandido. Documentos"</p>
+    <p>
+        Las ramas colapsadas anuncian "Colapsado" primero, dándote una señal inmediata para presionar la flecha derecha si quieres explorar más profundamente, sin esperar a escuchar el nombre completo.
+    </p>
+    <br>
+
+    <h3>Botones con estado Expandido/Colapsado</h3>
+    <p>
+        <strong>Problema:</strong> Los sitios web y aplicaciones modernos suelen usar botones estándar como activadores de menús desplegables o encabezados de acordeón con <code>aria-expanded</code>. Estos botones parecen botones normales para NVDA, pero su estado de expansión es fundamental para comprender si un menú o sección de contenido está abierto actualmente.
+    </p>
+    <p><strong>Antes:</strong> "Configuración. Botón" (sin indicación de que el desplegable esté abierto)</p>
+    <p><strong>Después:</strong> "Expandido. Configuración"</p>
+    <p>
+        Esta función es optativa mediante la configuración. Cuando está activada, cualquier rol de Botón que tenga estado Expandido o Colapsado anunciará primero el estado, brindándote la misma conciencia similar a la vista de árbol para menús, acordeones de preguntas frecuentes y secciones expandibles.
+    </p>
+    <br>
+
+    <h3>Estado seleccionado para pestañas y elementos de lista</h3>
+    <p>
+        <strong>Problema:</strong> Al recorrer pestañas en un diálogo o navegar por una larga lista de archivos, saber qué elemento está seleccionado actualmente requiere escuchar primero el nombre y luego "Seleccionado". En una lista de docenas de elementos, esto añade carga cognitiva.
+    </p>
+    <p><strong>Antes:</strong> "General. Pestaña. Seleccionado"</p>
+    <p><strong>Después:</strong> "Seleccionado. General"</p>
+    <p>
+        Esta configuración está desactivada por defecto para mantener la experiencia mínima. Actívala cuando trabajes frecuentemente con interfaces de pestañas o listas seleccionables largas donde la conciencia de la selección actual sea importante.
+    </p>
+    <br>
+
+    <h3>Estado no disponible (Global)</h3>
+    <p>
+        <strong>Problema:</strong> Los controles deshabilitados aparecen en todas partes: botones atenuados, campos de edición bloqueados, elementos de menú no disponibles. Escuchar un nombre largo solo para descubrir que el control no es utilizable desperdicia pulsaciones de teclas y energía mental.
+    </p>
+    <p><strong>Antes:</strong> "Enviar solicitud. Botón. No disponible"</p>
+    <p><strong>Después:</strong> "No disponible. Enviar solicitud"</p>
+    <p>
+        Esta verificación se ejecuta globalmente para cada tipo de control. Cualquier objeto que tenga el estado No disponible lo anunciará primero, permitiéndote saltarlo inmediatamente. El rol del control y otros estados se manejan de manera limpia para que nada se anuncie dos veces.
+    </p>
+    <br>
+
+    <h3>Estado de solo lectura para campos de edición</h3>
+    <p>
+        <strong>Problema:</strong> Llegas a un campo de edición listo para escribir, solo para escuchar "Solo lectura" al final del anuncio. Esto interrumpe el flujo de trabajo y crea confusión sobre si el campo es realmente editable.
+    </p>
+    <p><strong>Antes:</strong> "Correo electrónico. Edición. Solo lectura"</p>
+    <p><strong>Después:</strong> "Solo lectura. Correo electrónico"</p>
+    <p>
+        El complemento antepone "Solo lectura" antes del nombre del campo, preservando todo el comportamiento estándar de NVDA: el anuncio de selección de texto, la posición del cursor y la lectura de valores funcionan exactamente como se espera.
+    </p>
+    <br>
+
+    <h2>Uso</h2>
+    <ol>
+        <li>Abre el Menú de NVDA &gt; Preferencias &gt; Configuración &gt; State Before Label.</li>
+        <li>Marca o desmarca cada categoría de estado según tus preferencias.</li>
+        <li>Presiona Aceptar. Los cambios surten efecto inmediatamente sin reiniciar NVDA.</li>
+    </ol>
+    <p>
+        Todas las funciones funcionan automáticamente cuando mueves el enfoque con Tab, teclas de flecha o navegación con el ratón. No hay que memorizar pulsaciones de teclas adicionales.
+    </p>
+</div>
+
+<br><br>
+<h2>Apóyame</h2>
+    <p>Si esta herramienta ha hecho tu vida más fácil, considera apoyar la próxima actualización con una pequeña donación.</p>
+
+<br>
+
+<p>
+  <a href="https://buy.stripe.com/dRm9AU1xQ3Ds22N6VK1VK01">
+    <img src="https://img.shields.io/badge/Donate-Support%20Me-blue?style=for-the-badge&logo=stripe" alt="Apóyame">
+  </a>
+</p>
+<br>
+
+<p>Tu apoyo significa mucho. Construyamos algo grande juntos.</p>
+
+<br>
+
+  <div class="footer-note">
+<p>&copy; 2026 Chai Chaimee Complemento para NVDA, publicado bajo la Licencia Pública General de GNU.</p>
+</div>
+</div>
+</body>
+</html>

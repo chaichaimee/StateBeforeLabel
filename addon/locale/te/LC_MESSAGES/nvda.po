@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StateBeforeLabel 2026.7.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-06-28 16:42+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Telugu\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:66
+msgid "Announce &Read-only state for Edit boxes"
+msgstr "ఎడిట్ బాక్సుల కోసం రీడ్-ఓన్లీ స్థితిని ప్రకటించండి"
+
+#: __init__.py:56
+msgid "Announce &Selected state for Tabs and List items"
+msgstr "ట్యాబ్‌లు మరియు లిస్ట్ ఐటెమ్‌ల కోసం ఎంచుకున్న స్థితిని ప్రకటించండి"
+
+#: __init__.py:51
+msgid "Announce &Unavailable state before name (global)"
+msgstr "పేరుకు ముందు అందుబాటులో లేని స్థితిని ప్రకటించండి (గ్లోబల్)"
+
+#: __init__.py:36
+msgid "Enable for Checkboxes, Radio buttons, and Check Menu Items"
+msgstr "చెక్ బాక్స్‌లు, రేడియో బటన్‌లు మరియు చెక్ మెనూ ఐటెమ్‌ల కోసం ప్రారంభించండి"
+
+#: __init__.py:41
+msgid "Enable for Toggle buttons"
+msgstr "టోగుల్ బటన్‌ల కోసం ప్రారంభించండి"
+
+#: __init__.py:46
+msgid "Enable for TreeView items (Expanded/Collapsed)"
+msgstr "ట్రీ-వ్యూ ఐటెమ్‌ల కోసం ప్రారంభించండి (విస్తరించబడింది/కుదించబడింది)"
+
+#: __init__.py:61
+msgid "Include &Buttons for Expanded/Collapsed detection"
+msgstr "విస్తరించబడిన/కుదించబడిన గుర్తింపు కోసం బటన్‌లను చేర్చండి"
+
+#: __init__.py:30
+msgid "State Before Label"
+msgstr "లేబుల్‌కు ముందు స్థితి"

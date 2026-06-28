@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StateBeforeLabel 2026.7.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-06-28 16:42+0700\n"
+"PO-Revision-Date: 2026-06-28\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Portuguese (Portugal)\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:66
+msgid "Announce &Read-only state for Edit boxes"
+msgstr "Anunciar estado &apenas de leitura para caixas de edição"
+
+#: __init__.py:56
+msgid "Announce &Selected state for Tabs and List items"
+msgstr "Anunciar estado &selecionado para separadores e itens de lista"
+
+#: __init__.py:51
+msgid "Announce &Unavailable state before name (global)"
+msgstr "Anunciar estado &indisponível antes do nome (global)"
+
+#: __init__.py:36
+msgid "Enable for Checkboxes, Radio buttons, and Check Menu Items"
+msgstr "Ativar para caixas de verificação, botões de opção e itens de menu verificáveis"
+
+#: __init__.py:41
+msgid "Enable for Toggle buttons"
+msgstr "Ativar para botões de alternância"
+
+#: __init__.py:46
+msgid "Enable for TreeView items (Expanded/Collapsed)"
+msgstr "Ativar para itens de vista de árvore (expandido/contraído)"
+
+#: __init__.py:61
+msgid "Include &Buttons for Expanded/Collapsed detection"
+msgstr "Incluir &botões para deteção de expandido/contraído"
+
+#: __init__.py:30
+msgid "State Before Label"
+msgstr "Estado antes da etiqueta"

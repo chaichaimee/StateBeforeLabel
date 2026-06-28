@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Extension StateBeforeLabel pour NVDA</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 30px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+.tap-explanation {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feature-item {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="Logo NVDA" class="nvda-logo">
+    <h1>StateBeforeLabel</h1>
+
+<br>
+
+<p style="text-align: center;">Obtenez l'état en premier. Passez ceux qui ne comptent pas.</p>
+</div>
+
+<br>
+
+<div class="section">
+    <p style="text-align: center;"><b>auteur :</b> chai chaimee</p>
+    <p style="text-align: center;"><b>URL :</b> https://github.com/chaichaimee/StateBeforeLabel</p>
+</div>
+
+<hr>
+
+<div class="section">
+           <br>    
+
+<h2>Description</h2>
+    <p>
+        Avez-vous déjà parcouru un long formulaire avec la touche Tab, attendu d'entendre l'étiquette complète d'un contrôle, pour découvrir à la toute fin qu'il était désactivé ou déjà coché ? Ce court délai s'additionne, obligeant votre cerveau à réévaluer chaque contrôle après avoir entendu son étiquette plutôt qu'avant.
+    </p>
+    <p>
+        State Before Label inverse l'ordre d'annonce. Il dit d'abord les informations d'état les plus importantes, puis le nom, afin que vous puissiez décider instantanément de vous arrêter et d'interagir ou de continuer. Fini d'écouter une longue étiquette de bouton pour n'entendre "Indisponible" qu'à la fin.
+    </p>
+    <p>
+        Chaque catégorie d'état possède son propre interrupteur marche/arrêt dans les paramètres de NVDA, vous permettant de contrôler exactement quels états bénéficient d'un traitement prioritaire.
+    </p>
+    <br>
+    <h2>Fonctionnalités</h2>
+
+    <h3>Cases à cocher, boutons radio et éléments de menu avec case</h3>
+    <p>
+        <strong>Problème :</strong> Lorsque l'étiquette d'une case à cocher est longue ou descriptive, NVDA annonce traditionnellement d'abord le nom, puis l'état de coche. Au moment où vous entendez "coché", vous avez déjà investi de l'attention pour comprendre ce qu'est le contrôle.
+    </p>
+    <p><strong>Avant :</strong> "J'accepte les conditions générales et la politique de confidentialité de ce site Web, y compris toutes les sous-sections relatives à la collecte de données. Coché"</p>
+    <p><strong>Après :</strong> "Coché. J'accepte les conditions générales et la politique de confidentialité de ce site Web, y compris toutes les sous-sections relatives à la collecte de données."</p>
+    <p>
+        Lorsqu'il n'est pas coché, l'extension annonce l'état négatif : "Non coché" avant l'étiquette. L'annonce de rôle par défaut de NVDA comme "case à cocher" est naturellement supprimée pour que l'état ressorte clairement sans redondance.
+    </p>
+    <p>
+        <strong>Exemple concret — Paramètres vocaux de NVDA :</strong> Il s'agit d'un panneau que vous visitez probablement souvent. Voici à quoi ressemblent les cases à cocher avec State Before Label actif :
+    </p>
+    <p><strong>Avant :</strong></p>
+    <ul>
+        <li>Augmentation de la vitesse. Case à cocher. Non coché. Alt+t</li>
+        <li>Utiliser le système de sortie audio moderne (WASAPI). Case à cocher. Coché</li>
+        <li>Changement automatique de langue (lorsque pris en charge). Case à cocher. Non coché</li>
+        <li>Changement automatique de dialecte (lorsque pris en charge). Case à cocher. Non coché</li>
+        <li>Signaler les changements de langue lors de la lecture. Case à cocher. Non coché. Alt+g</li>
+        <li>Se fier à la langue de la voix lors du traitement des caractères et symboles. Case à cocher. Coché</li>
+        <li>Données du Consortium Unicode (y compris les emojis). Case à cocher. Coché</li>
+        <li>Descriptions différées pour les caractères lors du déplacement du curseur. Case à cocher. Non coché. Alt+d</li>
+        <li>Dire "Maj" avant les majuscules. Case à cocher. Non coché. Alt+c</li>
+        <li>Bip pour les majuscules. Case à cocher. Non coché. Alt+b</li>
+        <li>Utiliser la fonctionnalité d'orthographe si prise en charge. Case à cocher. Non coché. Alt+s</li>
+    </ul>
+    <p><strong>Après — avec State Before Label :</strong></p>
+    <ul>
+        <li>Non coché. Augmentation de la vitesse. Alt+t</li>
+        <li>Co ché. Utiliser le système de sortie audio moderne (WASAPI)</li>
+        <li>Non coché. Changement automatique de langue (lorsque pris en charge)</li>
+        <li>Non coché. Changement automatique de dialecte (lorsque pris en charge)</li>
+        <li>Non coché. Signaler les changements de langue lors de la lecture. Alt+g</li>
+        <li>Co ché. Se fier à la langue de la voix lors du traitement des caractères et symboles</li>
+        <li>Co ché. Données du Consortium Unicode (y compris les emojis)</li>
+        <li>Non coché. Descriptions différées pour les caractères lors du déplacement du curseur. Alt+d</li>
+        <li>Non coché. Dire "Maj" avant les majuscules. Alt+c</li>
+        <li>Non coché. Bip pour les majuscules. Alt+b</li>
+        <li>Non coché. Utiliser la fonctionnalité d'orthographe si prise en charge. Alt+s</li>
+    </ul>
+    <p>
+        Remarquez comment le mot "Case à cocher" a disparu de chaque ligne. Vous n'entendez que l'état suivi de l'étiquette et du raccourci. Cela transforme une page de paramètres encombrée en une liste claire et immédiatement analysable où votre cerveau traite d'abord l'état activé/désactivé, puis le nom de la fonction. Parcourir 11 cases à cocher avec Tab devient nettement plus rapide lorsque chacune suit le même modèle précis.
+    </p>
+    <br>
+
+    <h3>Boutons bascules</h3>
+    <p>
+        <strong>Problème :</strong> Les boutons bascules comme Gras, Italique ou Muet indiquent visuellement leur état par surbrillance, mais les utilisateurs de lecteurs d'écran doivent entendre d'abord l'étiquette avant de savoir si la fonction est activée ou désactivée.
+    </p>
+    <p><strong>Avant :</strong> "Gras. Bouton bascule. Enfoncé"</p>
+    <p><strong>Après :</strong> "Enfoncé. Gras"</p>
+    <p>
+        Lorsque la bascule est désactivée, "Non enfoncé" est dit avant le nom du bouton. L'annonce de rôle est également simplifiée afin que l'attention reste sur l'état puis l'identité.
+    </p>
+    <p>
+        <strong>Exemple concret — Paramètres Windows &gt; Comptes &gt; Options de connexion :</strong> Cette page contient plusieurs boutons bascules qui contrôlent le comportement de Windows au redémarrage ou à la reconnexion. Voici comment l'un d'eux se lit :
+    </p>
+    <p><strong>Avant :</strong> "Enregistrer automatiquement mes applications redémarrables et les redémarrer lorsque je me reconnecte. Bouton bascule. Non enfoncé"</p>
+    <p><strong>Après :</strong> "Non enfoncé. Enregistrer automatiquement mes applications redémarrables et les redémarrer lorsque je me reconnecte"</p>
+    <p>
+        L'étiquette est longue, mais avec State Before Label vous entendez d'abord l'état. Si la bascule est déjà activée, vous entendez "Enfoncé" et continuez. Si elle est désactivée et que vous voulez l'activer, vous le savez immédiatement et appuyez sur la barre d'espace. Pas d'attente à travers une longue phrase pour arriver au point de décision.
+    </p>
+    <br>
+
+    <h3>Éléments d'arborescence (Développé/Réduit)</h3>
+    <p>
+        <strong>Problème :</strong> Naviguer dans une structure arborescente dans l'Explorateur de fichiers ou les panneaux de configuration nécessite de savoir si une branche est ouverte ou fermée. Entendre d'abord le nom du dossier vous oblige à vous rappeler où vous êtes, puis à traiter l'état d'expansion après.
+    </p>
+    <p><strong>Avant :</strong> "Documents. Développé. Niveau 2"</p>
+    <p><strong>Après :</strong> "Développé. Documents"</p>
+    <p>
+        Les branches réduites annoncent "Réduit" en premier, vous donnant un indice immédiat pour appuyer sur la flèche droite si vous voulez explorer plus profondément, sans attendre d'entendre le nom complet.
+    </p>
+    <br>
+
+    <h3>Boutons avec état Développé/Réduit</h3>
+    <p>
+        <strong>Problème :</strong> Les sites Web et applications modernes utilisent souvent des boutons standard comme déclencheurs de menus déroulants ou en-têtes d'accordéon avec <code>aria-expanded</code>. Ces boutons ressemblent à des boutons normaux pour NVDA, mais leur état d'expansion est essentiel pour comprendre si un menu ou une section de contenu est actuellement ouvert.
+    </p>
+    <p><strong>Avant :</strong> "Paramètres. Bouton" (aucune indication que le menu déroulant est ouvert)</p>
+    <p><strong>Après :</strong> "Développé. Paramètres"</p>
+    <p>
+        Cette fonction est optionnelle via les paramètres. Lorsqu'elle est activée, tout rôle de Bouton portant l'état Développé ou Réduit annoncera d'abord l'état, vous donnant la même conscience de type arborescence pour les menus, les accordéons de FAQ et les sections extensibles.
+    </p>
+    <br>
+
+    <h3>État sélectionné pour les onglets et les éléments de liste</h3>
+    <p>
+        <strong>Problème :</strong> Lorsque vous parcourez des onglets dans une boîte de dialogue ou naviguez dans une longue liste de fichiers, savoir quel élément est actuellement sélectionné nécessite d'entendre d'abord le nom, puis "Sélectionné". Dans une liste de dizaines d'éléments, cela ajoute une charge cognitive.
+    </p>
+    <p><strong>Avant :</strong> "Général. Onglet. Sélectionné"</p>
+    <p><strong>Après :</strong> "Sélectionné. Général"</p>
+    <p>
+        Ce paramètre est désactivé par défaut pour garder l'expérience minimale. Activez-le lorsque vous travaillez fréquemment avec des interfaces à onglets ou de longues listes sélectionnables où la conscience de la sélection actuelle est importante.
+    </p>
+    <br>
+
+    <h3>État indisponible (Global)</h3>
+    <p>
+        <strong>Problème :</strong> Les contrôles désactivés apparaissent partout : boutons grisés, champs d'édition verrouillés, éléments de menu indisponibles. Entendre un long nom pour découvrir que le contrôle est inutilisable gaspille des frappes et de l'énergie mentale.
+    </p>
+    <p><strong>Avant :</strong> "Soumettre la demande. Bouton. Indisponible"</p>
+    <p><strong>Après :</strong> "Indisponible. Soumettre la demande"</p>
+    <p>
+        Cette vérification s'exécute globalement pour chaque type de contrôle. Tout objet portant l'état Indisponible l'annoncera en premier, vous permettant de passer immédiatement à côté. Le rôle du contrôle et les autres états sont gérés proprement afin que rien ne soit annoncé deux fois.
+    </p>
+    <br>
+
+    <h3>État lecture seule pour les champs d'édition</h3>
+    <p>
+        <strong>Problème :</strong> Vous arrivez sur un champ d'édition prêt à taper, pour n'entendre "Lecture seule" qu'à la fin de l'annonce. Cela interrompt le flux de travail et crée une confusion quant à savoir si le champ est réellement modifiable.
+    </p>
+    <p><strong>Avant :</strong> "Adresse e-mail. Édition. Lecture seule"</p>
+    <p><strong>Après :</strong> "Lecture seule. Adresse e-mail"</p>
+    <p>
+        L'extension ajoute "Lecture seule" avant le nom du champ tout en préservant tout le comportement standard de NVDA : l'annonce de la sélection de texte, la position du curseur et la lecture des valeurs fonctionnent exactement comme prévu.
+    </p>
+    <br>
+
+    <h2>Utilisation</h2>
+    <ol>
+        <li>Ouvrez le menu NVDA &gt; Préférences &gt; Paramètres &gt; State Before Label.</li>
+        <li>Cochez ou décochez chaque catégorie d'état selon vos préférences.</li>
+        <li>Appuyez sur OK. Les modifications prennent effet immédiatement sans redémarrer NVDA.</li>
+    </ol>
+    <p>
+        Toutes les fonctionnalités fonctionnent automatiquement lorsque vous déplacez le focus avec Tab, les flèches ou la navigation souris. Aucun raccourci clavier supplémentaire à mémoriser.
+    </p>
+</div>
+
+<br><br>
+<h2>Soutenez-moi</h2>
+    <p>Si cet outil a facilité votre vie, envisagez de soutenir la prochaine mise à jour par un petit don.</p>
+
+<br>
+
+<p>
+  <a href="https://buy.stripe.com/dRm9AU1xQ3Ds22N6VK1VK01">
+    <img src="https://img.shields.io/badge/Donate-Support%20Me-blue?style=for-the-badge&logo=stripe" alt="Soutenez-moi">
+  </a>
+</p>
+<br>
+
+<p>Votre soutien compte énormément. Construisons quelque chose de grand ensemble.</p>
+
+<br>
+
+  <div class="footer-note">
+<p>&copy; 2026 Chai Chaimee Extension NVDA, publiée sous licence GNU General Public License.</p>
+</div>
+</div>
+</body>
+</html>

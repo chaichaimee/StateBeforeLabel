@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StateBeforeLabel 2026.7.0\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-06-28 16:42+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Uzbek\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:66
+msgid "Announce &Read-only state for Edit boxes"
+msgstr "Tahrirlash qutilari uchun faqat o'qish mumkin holatini e'lon qiling"
+
+#: __init__.py:56
+msgid "Announce &Selected state for Tabs and List items"
+msgstr "Tablar va ro'yxat elementlari uchun tanlangan holatini e'lon qiling"
+
+#: __init__.py:51
+msgid "Announce &Unavailable state before name (global)"
+msgstr "Nomdan oldin mavjud emas holatini e'lon qiling (global)"
+
+#: __init__.py:36
+msgid "Enable for Checkboxes, Radio buttons, and Check Menu Items"
+msgstr "Belgilash qutilari, radio tugmalar va tekshirish menyusi elementlari uchun yoqing"
+
+#: __init__.py:41
+msgid "Enable for Toggle buttons"
+msgstr "Toggle tugmalari uchun yoqing"
+
+#: __init__.py:46
+msgid "Enable for TreeView items (Expanded/Collapsed)"
+msgstr "TreeView elementlari uchun yoqing (kengaytirilgan/yig'ilgan)"
+
+#: __init__.py:61
+msgid "Include &Buttons for Expanded/Collapsed detection"
+msgstr "Kengaytirilgan/yig'ilgan holatni aniqlash uchun tugmalarni qo'shing"
+
+#: __init__.py:30
+msgid "State Before Label"
+msgstr "Belgidan oldingi holat"
